@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style4.css">
+    <title>Modern Login Page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form action="send_email.php" method="post">
+                <h1>Create Account</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email for registeration</span>
+                <input type="text" placeholder="username" id="username" name="username">
+                <input type="email" placeholder="email" id="email" name="email">
+                <span id="emailStatus"></span>
+                <input type="password" placeholder="password" id="password" name="password">
+                <input type="password" placeholder="cpassword" id="confirmPassword" name="confirmPassword">
+                <button id="sendOTPButton" disabled>Send OTP</button>
+                <script>
+                    $(document).ready(function() {
+                        $('#email').on('blur', function() {
+                            validateEmail();
+                        });
+                        function validateEmail() {
+                            var email = $('#email').val();
+                            $.ajax({
+                                url: 'teste2.php',
+                                type: 'POST',
+                                data: { email: email },
+                                success: function(response) {
+                                    if (response === "valid") {
+                                        $('#emailStatus').html('<span class="tick">✓</span>');
+                                        $('#sendOTPButton').prop('disabled', false);
+                                    } else {
+                                        $('#emailStatus').html('');
+                                        $('#sendOTPButton').prop('disabled', true);
+                                        alert("Email is not valid");
+                                    }
+                                }
+                            });
+                        } 
+                    });
+                </script>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form action="loginch.php" method="post">
+                <h1>Sign In</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email password</span>
+                <input type="email" placeholder="Email" id="email" name="email">
+                <input type="password" placeholder="Password"id="password" name="password">
+                <a href="#">Forget Your Password?</a>
+                <button>Sign In</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back !</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Welcome, Friend!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden" id="register">Registration</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script4.js"></script>
+</body>
+
+</html>

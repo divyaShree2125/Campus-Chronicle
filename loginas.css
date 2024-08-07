@@ -1,0 +1,103 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: url('BV-6.webp') no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 100px auto;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8); /* Adding opacity */
+  padding: 30px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease; /* Add transition for background color change */
+}
+
+h1 {
+  color: #333;
+  font-family: cursive; /* Change font family to cursive for a stylish look */
+  font-size: 48px; /* Adjust font size as needed */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a text shadow for a stylish*/
+
+}
+
+.options {
+  margin-top: 50px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition for background color change and transform */
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.1); /* Add scaling effect on hover */
+}
+
+h1 {
+  color: #333;
+  font-family: 'Courier New', Courier, monospace; /* Change font family to a typewriter-style font for a unique look */
+  font-size: 64px; /* Increase font size for emphasis */
+  text-transform: uppercase; /* Transform text to uppercase for a bold effect */
+  letter-spacing: 2px; /* Add letter spacing for better readability */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add a text shadow for depth */
+  animation: rainbowText 5s infinite; /* Apply rainbow animation effect */
+}
+
+/* Define keyframes for rainbow text animation */
+@keyframes rainbowText {
+  0% {
+    color: #f00051; /* Red */
+  }
+  25% {
+    color: #ff7f00; /* Orange */
+  }
+  50% {
+    color: #ffff00; /* Yellow */
+  }
+  75% {
+    color: #00ff00; /* Green */
+  }
+  100% {
+    color: #0000ff; /* Blue */
+  }
+}
+.btn {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  margin: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow for depth */
+}
+
+.btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Scale button slightly on hover */
+}
+
+/* Style for "Login as Student" button */
+.btn.student {
+  background-color: #28a745; /* Green color */
+}
+
+/* Style for "Login as Admin" button */
+.btn.admin {
+  background-color: #dc3545; /* Red color */
+}
+

@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Notice Management System</title>
+    <!--<link rel="stylesheet" href="styles.css">-->
+</head>
+<body>
+    <div class="container">
+        <h1>Notice Board</h1>
+        <div id="clubs-grid" class="clubs-grid">
+            <!-- Club information with pictures will be dynamically loaded here using JavaScript -->
+        </div>
+
+        <!-- Admin form for adding or removing clubs -->
+        <div class="admin-form">
+            <h2>Add Notice</h2>
+            <form id="addClubForm" action="pyq_admin.php" method="post">
+                <input type="hidden" name="action" value="add">
+                <label for="name">Notice Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" required></textarea>
+                <label for="image">Image URL:</label>
+                <input type="text" id="image" name="image" required>
+                <button type="submit">Add Notice</button>
+            </form>
+            
+            <h2>Remove Notice</h2>
+            <form id="removeClubsForm" action="pyq_admin.php" method="post">
+                <input type="hidden" name="action" value="remove">
+                <div id="clubCheckboxes">
+                    <!-- Club checkboxes will be dynamically loaded here using JavaScript -->
+                </div>
+                <button type="submit">Remove Selected Notice</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="pyq_remove.js"></script>
+</body>
+</html>
